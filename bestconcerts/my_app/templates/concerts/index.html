@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/concerts/concert-index.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="card-container">
+  {% for concert in concerts %}
+  <div class="card">
+    <div class="card-content">
+      <div class="card-img-container">
+        <img
+          src="{% static 'images/AGGIUNGI FOTO' %}"
+          alt="crowd"
+        />
+      </div>
+      <h2 class="card-title">{{ concert.artist }}</h2>
+      <p>{{ concert.genre }} - {{ concert.year }}</p>
+      <p><small>{{ concert.description }}</small></p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
